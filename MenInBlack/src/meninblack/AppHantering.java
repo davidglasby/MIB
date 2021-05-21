@@ -8,9 +8,11 @@ package meninblack;
 import DataLayer.UserDB;
 import Models.Agent;
 import Models.Alien;
+import Models.IAgent;
+import Models.IAgentDAL;
 import Models.IUser;
 import Models.IUserDAL;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -19,9 +21,11 @@ import javax.swing.JOptionPane;
 public class AppHantering implements IUser {
    
     private IUserDAL userdb;
+    
     public AppHantering(IUserDAL userdb)
     {
         this.userdb = userdb;
+        
     }
     
    
@@ -76,6 +80,8 @@ public class AppHantering implements IUser {
        var chef = userdb.hamtaInfo(id);
        return chef;
     }
+
+    
 
    
 

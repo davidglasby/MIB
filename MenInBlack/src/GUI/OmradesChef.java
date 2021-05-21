@@ -52,6 +52,7 @@ public class OmradesChef extends javax.swing.JFrame {
         txtAdmin = new javax.swing.JTextField();
         btnHamtaInfo = new javax.swing.JButton();
         lblInfoOmChef = new javax.swing.JLabel();
+        btnTillbaka = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,7 +73,7 @@ public class OmradesChef extends javax.swing.JFrame {
 
         lblTelefon.setText("Telefon :");
 
-        lblAnstDatum.setText("Ans√§llningsdatum :");
+        lblAnstDatum.setText("Ans‰llningsdatum :");
 
         lblAdmin.setText("Admin :");
 
@@ -82,7 +83,7 @@ public class OmradesChef extends javax.swing.JFrame {
             }
         });
 
-        btnHamtaInfo.setText("H√§mta info");
+        btnHamtaInfo.setText("H‰mta info");
         btnHamtaInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHamtaInfoActionPerformed(evt);
@@ -90,15 +91,29 @@ public class OmradesChef extends javax.swing.JFrame {
         });
 
         lblInfoOmChef.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblInfoOmChef.setText("Information om omr√•dets chef");
+        lblInfoOmChef.setText("Information om omrÂdets chef");
+
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(lblInfoOmChef)
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnTillbaka)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblID)
@@ -115,11 +130,7 @@ public class OmradesChef extends javax.swing.JFrame {
                             .addComponent(txtID))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnHamtaInfo)
-                        .addGap(24, 24, 24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(lblInfoOmChef)
-                        .addContainerGap(90, Short.MAX_VALUE))))
+                        .addGap(24, 24, 24))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +159,9 @@ public class OmradesChef extends javax.swing.JFrame {
                     .addComponent(lblAdmin)
                     .addComponent(txtAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(btnHamtaInfo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnHamtaInfo)
+                    .addComponent(btnTillbaka))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -176,6 +189,11 @@ public class OmradesChef extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnHamtaInfoActionPerformed
+
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,6 +232,7 @@ public class OmradesChef extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHamtaInfo;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAdmin;
     private javax.swing.JLabel lblAnstDatum;

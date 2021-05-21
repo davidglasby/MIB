@@ -19,9 +19,8 @@ import meninblack.AppHantering;
 public class Inlogg extends javax.swing.JFrame {
     
     private IUser userService = new AppHantering(new UserDB());
-    /**
-     * Creates new form Inlogg
-     */
+    
+    
     public Inlogg() {
         initComponents();
     }
@@ -52,9 +51,11 @@ public class Inlogg extends javax.swing.JFrame {
             }
         });
 
-        lblUserName.setText("AnvÃ¤ndarnamn");
+        lblUserName.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
+        lblUserName.setText("Användarnamn");
 
-        lblPassword.setText("LÃ¶senord");
+        lblPassword.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
+        lblPassword.setText("Lösenord");
 
         lblLoggaIn.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         lblLoggaIn.setText("Logga in som Agent");
@@ -113,13 +114,10 @@ public class Inlogg extends javax.swing.JFrame {
         var user = userService.inloggAgent(username, password);
         if(user != null)
         {
-            JOptionPane.showMessageDialog(null, "SuccÃ©!");
+            JOptionPane.showMessageDialog(null, "Succe!");
             new StartSida(user).setVisible(true);
         }
-        else 
-        {
-            JOptionPane.showMessageDialog(null, "Snett bror");
-        }
+        
         
     }//GEN-LAST:event_btnLoggainActionPerformed
 

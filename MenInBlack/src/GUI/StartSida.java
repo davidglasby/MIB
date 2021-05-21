@@ -6,6 +6,7 @@
 package GUI;
 
 import Models.Agent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,18 +39,82 @@ public class StartSida extends javax.swing.JFrame {
         lblWelcome = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnAndraLosen = new javax.swing.JButton();
+        lblAdministrator = new javax.swing.JLabel();
+        lblAgentFunktion = new javax.swing.JLabel();
+        btnAgenter = new javax.swing.JButton();
+        btnAliensFunktioner = new javax.swing.JButton();
+        btnAndraChef = new javax.swing.JButton();
+        btnAndraKontorschef = new javax.swing.JButton();
+        btnRegistreraUtrustning = new javax.swing.JButton();
+        btnVisaOmradeschef = new javax.swing.JButton();
+        btnRaderaUtrustning = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblWelcome.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblWelcome.setText("VÃ¤lkommen");
+        lblWelcome.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblWelcome.setText("Välkommen");
 
         jLabel1.setText("Huvudmeny");
 
-        btnAndraLosen.setText("Ã„ndra LÃ¶senord");
+        btnAndraLosen.setText("Ändra Lösenord");
         btnAndraLosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAndraLosenActionPerformed(evt);
+            }
+        });
+
+        lblAdministrator.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblAdministrator.setText("Administration");
+
+        lblAgentFunktion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblAgentFunktion.setText("Agenters funktion");
+
+        btnAgenter.setText("Agenter");
+        btnAgenter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgenterActionPerformed(evt);
+            }
+        });
+
+        btnAliensFunktioner.setText("Aliens");
+        btnAliensFunktioner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAliensFunktionerActionPerformed(evt);
+            }
+        });
+
+        btnAndraChef.setText("Ändra Områdeschef");
+        btnAndraChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraChefActionPerformed(evt);
+            }
+        });
+
+        btnAndraKontorschef.setText("Ändra Kontorschef");
+        btnAndraKontorschef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAndraKontorschefActionPerformed(evt);
+            }
+        });
+
+        btnRegistreraUtrustning.setText("Registrera Utrustning");
+        btnRegistreraUtrustning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistreraUtrustningActionPerformed(evt);
+            }
+        });
+
+        btnVisaOmradeschef.setText("Områdeschefer");
+        btnVisaOmradeschef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisaOmradeschefActionPerformed(evt);
+            }
+        });
+
+        btnRaderaUtrustning.setText("Radera Utrustning");
+        btnRaderaUtrustning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaderaUtrustningActionPerformed(evt);
             }
         });
 
@@ -57,28 +122,74 @@ public class StartSida extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jLabel1))
+                        .addGap(31, 31, 31)
+                        .addComponent(lblAgentFunktion))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAndraLosen)
-                            .addComponent(lblWelcome))))
-                .addContainerGap(152, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnAliensFunktioner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnRegistreraUtrustning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnVisaOmradeschef, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblWelcome)
+                            .addComponent(jLabel1))
+                        .addGap(54, 324, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAndraKontorschef, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnAndraChef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblAdministrator)
+                                .addComponent(btnAgenter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnRaderaUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(btnAndraLosen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(2, 2, 2)
-                .addComponent(lblWelcome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
-                .addComponent(btnAndraLosen)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblWelcome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAndraLosen)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblAdministrator)
+                            .addComponent(lblAgentFunktion))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAgenter, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnAliensFunktioner, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAndraChef, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnVisaOmradeschef, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAndraKontorschef, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRegistreraUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRaderaUtrustning, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 140, Short.MAX_VALUE))))
         );
 
         pack();
@@ -88,6 +199,76 @@ public class StartSida extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AndraLosenAgent(agent).setVisible(true);
     }//GEN-LAST:event_btnAndraLosenActionPerformed
+
+    private void btnAgenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgenterActionPerformed
+        // TODO add your handling code here:
+        String approved = agent.isAdmin();
+        if(approved.equals("J"))
+        {
+            new AdminFunktionerAgent(agent).setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Du har inte behörighet till detta");
+        }
+    }//GEN-LAST:event_btnAgenterActionPerformed
+
+    private void btnAliensFunktionerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAliensFunktionerActionPerformed
+        // TODO add your handling code here:
+        new AgentFunktionForAlien(agent).setVisible(true);
+    }//GEN-LAST:event_btnAliensFunktionerActionPerformed
+
+    private void btnAndraChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraChefActionPerformed
+        // TODO add your handling code here:
+        String approved = agent.isAdmin();
+        if(approved.equals("J"))
+        {
+            new ChangeOmradesChef().setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Du har inte behörighet till detta");
+        }
+        
+    }//GEN-LAST:event_btnAndraChefActionPerformed
+
+    private void btnAndraKontorschefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraKontorschefActionPerformed
+        // TODO add your handling code here:
+        String approved = agent.isAdmin();
+        if(approved.equals("J"))
+        {
+            new ChangeKontorsChef().setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Du har inte behörighet till detta");
+        }
+        
+    }//GEN-LAST:event_btnAndraKontorschefActionPerformed
+
+    private void btnRegistreraUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistreraUtrustningActionPerformed
+        // TODO add your handling code here:
+        new RegistreraUtrustning().setVisible(true);
+    }//GEN-LAST:event_btnRegistreraUtrustningActionPerformed
+
+    private void btnVisaOmradeschefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisaOmradeschefActionPerformed
+        // TODO add your handling code here:
+        new OmradesChefer().setVisible(true);
+    }//GEN-LAST:event_btnVisaOmradeschefActionPerformed
+
+    private void btnRaderaUtrustningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaUtrustningActionPerformed
+        // TODO add your handling code here:
+        String approved = agent.isAdmin();
+        if(approved.equals("J"))
+        {
+            new RaderaUtrustning().setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Du har inte behörighet till detta");
+        }
+        
+    }//GEN-LAST:event_btnRaderaUtrustningActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,8 +306,17 @@ public class StartSida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgenter;
+    private javax.swing.JButton btnAliensFunktioner;
+    private javax.swing.JButton btnAndraChef;
+    private javax.swing.JButton btnAndraKontorschef;
     private javax.swing.JButton btnAndraLosen;
+    private javax.swing.JButton btnRaderaUtrustning;
+    private javax.swing.JButton btnRegistreraUtrustning;
+    private javax.swing.JButton btnVisaOmradeschef;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblAdministrator;
+    private javax.swing.JLabel lblAgentFunktion;
     private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }

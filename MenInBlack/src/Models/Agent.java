@@ -17,8 +17,9 @@ public class Agent {
     private String anstallningsDatum;
     private String admin;
     private String losenord;
+    private int omrade;
     
-    public Agent(int id, String namn, String telefon, String anstallningsDatum, String admin, String losenord)
+    public Agent(int id, String namn, String telefon, String anstallningsDatum, String admin, String losenord, int omrade)
     {
         this.id = id;
         this.namn = namn;
@@ -26,6 +27,17 @@ public class Agent {
         this.anstallningsDatum = anstallningsDatum;
         this.admin = admin;
         this.losenord = losenord;
+        this.omrade = omrade;
+    }
+    
+    public Agent(int id, String namn, String telefon, String admin, String losenord, int omrade)
+    {
+        this.id = id;
+        this.namn = namn;
+        this.telefon = telefon;
+        this.admin = admin;
+        this.losenord = losenord;
+        this.omrade = omrade;
     }
     
     public String getNamn()

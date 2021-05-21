@@ -60,15 +60,16 @@ public class UserDB implements IUserDAL {
           var resultat = DatabaseAcces.getIdb().fetchRow(sq);
           if(resultat != null)
           {
+              
               int id = Integer.parseInt(resultat.get("AGENT_ID"));
               String namn = resultat.get("NAMN");
               String losenord = resultat.get("LOSENORD");
               String telefon = resultat.get("TELEFON");
               String anstDatum = resultat.get("ANSTALLNINGSDATUM");
               String admin = resultat.get("ADMINISTRATOR");
-              var omrade = resultat.get("OMRADE");
+              var omrade = Integer.parseInt(resultat.get("OMRADE"));
               
-              var agent = new Agent(id, namn, telefon, anstDatum, admin, losenord);
+              var agent = new Agent(id, namn, telefon, anstDatum, admin, losenord, omrade);
                       
               return agent;
           }
@@ -82,7 +83,7 @@ public class UserDB implements IUserDAL {
       }
       catch(InfException undantag)
       {
-          
+          System.out.println(undantag);
       }
       return null;
         
@@ -118,7 +119,7 @@ public class UserDB implements IUserDAL {
       }
       catch(InfException undantag)
       {
-          
+          System.out.println(undantag);
       }
       return null;
         
@@ -138,14 +139,14 @@ public class UserDB implements IUserDAL {
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Du anv√§nder redan detta l√∂senord");
+            JOptionPane.showMessageDialog(null, "Du anv‰nder redan detta lˆsenord");
             return;
         }
         
     } 
      catch (InfException undantag)
     {
-        JOptionPane.showMessageDialog(null, "N√•got gick felfel");
+        JOptionPane.showMessageDialog(null, "NÂgot gick felfel");
         System.out.println(undantag);
     }
      
@@ -166,13 +167,13 @@ public class UserDB implements IUserDAL {
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Du anv√§nder redan detta l√∂senord");
+                JOptionPane.showMessageDialog(null, "Du anv‰nder redan detta lˆsenord");
                 return;
             }
         }
         catch (InfException undantag)
         {
-            JOptionPane.showMessageDialog(null, "N√•got gick felfel");
+            JOptionPane.showMessageDialog(null, "NÂgot gick felfel");
             System.out.println(undantag);
         }
         
@@ -193,20 +194,18 @@ public class UserDB implements IUserDAL {
                 String anstDatum = resultat.get("ANSTALLNINGSDATUM");
                 String admin = resultat.get("ADMINISTRATOR");
                 String losenord = resultat.get("LOSENORD");
+                var omrade = Integer.parseInt(resultat.get("OMRADE"));
                 
                 
-                var agent = new Agent(id, namn, telefon, anstDatum, admin, losenord);
+                var agent = new Agent(id, namn, telefon, anstDatum, admin, losenord, omrade);
                 return agent;
                 
             }
             
-            
-            
-            
         }  catch (InfException undantag)
         {
             System.out.println(undantag);
-            JOptionPane.showMessageDialog(null, "Gick ej att h√§mta agent");
+            JOptionPane.showMessageDialog(null, "Gick ej att h‰mta agent");
         }
        return null;
     }

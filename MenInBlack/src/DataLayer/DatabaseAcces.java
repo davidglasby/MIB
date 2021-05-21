@@ -27,14 +27,16 @@ public class DatabaseAcces {
         }
         catch(InfException undantaget)
         {
+            
             System.out.println(undantaget.getMessage());
             JOptionPane.showMessageDialog(null, "Kunde inte koppla till databas");
-        }
+        } 
     }
     
     public static InfDB getIdb()
     {
         return idb;
+        
        
     }
 }

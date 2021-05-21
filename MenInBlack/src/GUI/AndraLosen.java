@@ -55,14 +55,15 @@ public class AndraLosen extends javax.swing.JFrame {
         pswNyttLosen = new javax.swing.JPasswordField();
         pswNyttLosen2 = new javax.swing.JPasswordField();
         lblAndraLosen = new javax.swing.JLabel();
+        btnTillbaka = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblNyttLosen.setText("Nytt LÃ¶senord");
+        lblNyttLosen.setText("Nytt Lösenord");
 
-        lblBekraftaLosen.setText("BekrÃ¤fta LÃ¶senord");
+        lblBekraftaLosen.setText("Bekräfta Lösenord");
 
-        btnAndraLosen.setText("Ã„ndra LÃ¶senord");
+        btnAndraLosen.setText("Ändra Lösenord");
         btnAndraLosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAndraLosenActionPerformed(evt);
@@ -70,25 +71,37 @@ public class AndraLosen extends javax.swing.JFrame {
         });
 
         lblAndraLosen.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblAndraLosen.setText("Ã„ndra ditt lÃ¶senord hÃ¤r");
+        lblAndraLosen.setText("Ändra ditt lösenord här");
+
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTillbakaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblAndraLosen)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNyttLosen)
-                            .addComponent(lblBekraftaLosen))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pswNyttLosen2)
-                            .addComponent(pswNyttLosen)
-                            .addComponent(btnAndraLosen, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(lblAndraLosen)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNyttLosen)
+                                    .addComponent(lblBekraftaLosen))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(pswNyttLosen2)
+                                    .addComponent(pswNyttLosen)
+                                    .addComponent(btnAndraLosen, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnTillbaka)))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -106,7 +119,9 @@ public class AndraLosen extends javax.swing.JFrame {
                     .addComponent(pswNyttLosen2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(btnAndraLosen)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(btnTillbaka)
+                .addContainerGap())
         );
 
         pack();
@@ -114,20 +129,25 @@ public class AndraLosen extends javax.swing.JFrame {
 
     private void btnAndraLosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAndraLosenActionPerformed
         // TODO add your handling code here:
-        //Dags o skriva kod fÃ¶r alla komponenter!!!!
+        //Dags o skriva kod för alla komponenter!!!!
         
         var nyttlosen = pswNyttLosen.getText();
         var nyttlosen2 = pswNyttLosen2.getText();
         if(nyttlosen.equals(nyttlosen2))
         {
             userService.andraLosenForAlien(alien, nyttlosen);
-            JOptionPane.showMessageDialog(null, "LÃ¶senordet har Ã¤ndrats!");
+            JOptionPane.showMessageDialog(null, "Lösenordet har ändrats!");
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Det nya lÃ¶senordet matchar inte");
+            JOptionPane.showMessageDialog(null, "Det nya lösenordet matchar inte");
         }
     }//GEN-LAST:event_btnAndraLosenActionPerformed
+
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
+        // TODO add your handling code here
+        this.dispose();
+    }//GEN-LAST:event_btnTillbakaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +186,7 @@ public class AndraLosen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraLosen;
+    private javax.swing.JButton btnTillbaka;
     private javax.swing.JLabel lblAndraLosen;
     private javax.swing.JLabel lblBekraftaLosen;
     private javax.swing.JLabel lblNyttLosen;
